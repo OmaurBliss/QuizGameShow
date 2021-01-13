@@ -51,32 +51,27 @@
     <div class="container col-md-6">
       <div class="jumbotron text-center">
         <h1 class="display-4">MARVEL QUIZ</h1>
-        <p class="lead">
-          Answer each multiple choice correctly within the time allotted to score. Choose the wrong
-          answer and you will loose 10 seconds. At the end of the time allotted you will get a high
-          score.
-        </p>
+        <p class="score">Enter your initials to receive score</p>
         <hr class="my-4" />
-        <p>If you're ready click below to get started. Good Luck!</p>
-        <div class="btn-group-vertical">
-          <button
-            onclick="quizclick()"
-            type="button"
-            class="btn btn-primary btn-lg btn-block"
-            margin-bottom="10"
-          >
-            Let's GO!
-          </button>
+        <p id="high-score"><strong></strong></p> 
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your initials">
+              <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+           
+            <button id= "initials" type="submit" class="btn btn-primary">Submit</button>
+          </form>  
         </div>
       </div>
     </div>
-    <div></div>
   </body>
   <footer>
     <a class="footer" href="index.html">
       <img
         src="assets/24-249605_white-marvel-logo-png-transparent-png.png"
-        alt="Marvel logo"
+        alt="Omaur Bliss logo"
         margin-top="20"
         width="40"
         height="40"
