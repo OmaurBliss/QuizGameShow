@@ -61,7 +61,7 @@
         <!-- <p id="timer"></p> -->
       </div>
         <hr class="my-4" />
-        <p>If you're ready click below to get started. Good Luck!</p>
+        <p id="quizanswer">If you're ready click below to get started. Good Luck!</p>
         <div class="btn-group-vertical">
           <button
             id="quizclick"
@@ -106,9 +106,10 @@
     }
 ]
 var startQuiz = document.querySelector("#quizclick");
-var currentQuestion = 0
-// allQuestions[currentQuestion].choices[]
-//currentQuestion++;
+var quizText = document. getElementById("quiztext");
+var currentQuestion = 0;
+var allQuestions;
+
 startQuiz.addEventListener("click", function() {
 
 var countDownTimer = ("#timer")
@@ -120,23 +121,37 @@ var countDownTimer = ("#timer")
         clearInterval(countDownTimer);
         var quizOver = document.getElementById("timer");
         quizOver.innerHTML = "Game Over!";
+      
+        
     }
 
     },1000);
-  
+
+    startQuiz.addEventListener("click", function() {
+      
+      // var startQuestion = document.getElementById("quiztext");
+      // allQuestions[currentQuestion];
+      // document.querySelector("#quiztext").textContent = allQuestions;
+      
+
+    });
   
 
     // code for putting html on screen for quiz
-})
+});
 
-var optionChosen = document.querySelector("#quizanswer");
+
+// }
+var optionChosen = document.querySelector("#quizclick");
 optionChosen.addEventListener("click", function() {
+  allQuestions
 if (allQuestions[currentQuestion].answer === this.textContent) {
   
-
+currentQuestion++;
   //code for text content for next question
 } else{
   if (timeleft <= 10) {
+    clearInterval(countDownTimer);
     //end game code here
   } else {
   timeleft -= 10; }
@@ -161,3 +176,5 @@ currentQuestion++;
 
   <!-- <script src="javascript.js"></script> -->
 </html>
+<!-- // allQuestions[currentQuestion].choices[]
+//currentQuestion++; -->
