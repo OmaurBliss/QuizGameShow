@@ -1,25 +1,32 @@
-var quizClick = document.querySelector ("#quizclick") 
+// var quizClick = document.querySelector ("#quizclick") 
 // var questions = ["first wuestion", "second qestion"];
 // var choices = [
 //     ["ironman", "spiderman"],
 //     []
 // ]
 // var answer =[""]
-var countDownTime = 0
+
+var countDownTime = new Date ("Jan 15, 2021 15:37:00").getTime();
+// var countDownStart = 60000;
 var x = setInterval (function (){
-var countDownStart = 60000;
-var countDown = countDownStart - countDownTime;
-var seconds = Math.floor((distance % (1000* 60)) / 1000);
-document.querySelector("#timer").textContent = "s";
+var now = new Date().getTime();
+var countDown = countDownTime - now;  
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);  
+// document.querySelector("#timer").textContent = "s";
+
+document.querySelector("#timer").textContent = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
 
 if (countDown < 0) {
     clearInterval(x);
     document.querySelector("#timer").textContent = "Time is Up"
 }
+}, 1000);
 
-});
-
-var countDown = document.querySelector("#timer");
+var countDown = document.querySelector("timer");
 var allQuestions = [
     {
         question: "Who is Tony Stark's alter ego?",
@@ -48,9 +55,9 @@ var allQuestions = [
     }
 ]
 function startQuiz () {
+    // var countDown = document.querySelector("#timer");
+setInterval();
 
+// }
 
-
-}
-var countDown = document.querySelector("#timer");
 document.addEventListener ("click", startQuiz)

@@ -43,7 +43,7 @@
             <a class="nav-link" href="highscore.html">High Scores</a>
           </li>
         </ul>
-        <span  id="timer" class="navbar-text">
+        <span class="navbar-text">
         </span>
       </div>
     </div>
@@ -52,16 +52,19 @@
     <div class="container col-md-6">
       <div class="jumbotron text-center">
         <h1 class="display-4">MARVEL QUIZ</h1>
-        <p class="lead">
+        <p id="timer" class="lead">
           Answer each multiple choice correctly within the time allotted to score. Choose the wrong
           answer and you will loose 10 seconds. At the end of the time allotted you will get a high
           score.
         </p>
+        <div></div>
+        <!-- <p id="timer"></p> -->
+      </div>
         <hr class="my-4" />
         <p>If you're ready click below to get started. Good Luck!</p>
         <div class="btn-group-vertical">
           <button
-            id="quizclickf"
+            id="quizclick"
             type="button"
             class="btn btn-primary btn-lg btn-block"
             margin-bottom="10"
@@ -70,9 +73,72 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> 
     <div></div>
-  </body>
+ <script>
+  //  Timer
+  var allQuestions = [
+    {
+        question: "Who is Tony Stark's alter ego?",
+        choices:["Pink Panther", "The Claw", "Ironman", "Black Panther"],
+        answer: "Ironman"
+    },
+    {
+        question: "Who is an origional member of the Avengers?",
+        choices: ["Rocket", "Black Panther", "Aquaman", "Black Widow"],
+        answer: "Black Widow"
+    },
+    {
+        question: "Which superhero was bitten by a radioactive spider?",
+        choices: ["Hulk", "Thor", "Hawkeye", "Spiderman"],
+        answer: "Spiderman"
+    },
+    {
+        question: "Which super villain was in search of the infinity stones?",
+        choices: ["Dr Doom", "Octopus", "The Mandarin", "Thanos"],
+        answer: "Thanos"
+    },
+    {
+        question: "Which marvel character is known to break the forth wall?",
+        choices: ["Dare Devil", "Iron Fist", "Punisher", "Deadpool"],
+        answer: "Deadpool"
+    }
+]
+var startQuiz = document.querySelector("#quizclick");
+var currentQuestion = 0
+// allQuestions[currentQuestion].choices[]
+//currentQuestion++;
+startQuiz.addEventListener("click", function() {
+
+var countDownTimer = ("timer")
+  var timeleft = 60;
+    var countDownTimer = setInterval(function(){
+    timeleft--;
+    document.querySelector("timer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(countDownTimer);
+    },1000);
+    
+    // code for putting html on screen for quiz
+})
+
+var optionChosen = document.querySelector(".quizanswer");
+optionChosen.addEventListener("click", function() {
+if (allQuestions[currentQuestion].answer === this.textContent) {
+  
+
+  //code for text content for next question
+} else{
+  if (timeleft <= 10) {
+    //end game code here
+  } else {
+  timeleft -= 10; }
+  
+}
+currentQuestion++;
+
+});
+ </script>
   <footer>
     <a class="footer" href="index.html">
       <img
@@ -84,5 +150,7 @@
       />
     </a>
   </footer>
-  <script src="script.js"></script>
+</body>
+
+  <!-- <script src="javascript.js"></script> -->
 </html>
