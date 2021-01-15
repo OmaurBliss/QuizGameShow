@@ -51,13 +51,13 @@
   <body>
     <div class="container col-md-6">
       <div class="jumbotron text-center">
-        <h1 class="display-4">MARVEL QUIZ</h1>
-        <p id="timer" class="lead">
+        <h1 id="timer" class="display-4">MARVEL QUIZ</h1>
+        <p id="quiztext" class="lead">
           Answer each multiple choice correctly within the time allotted to score. Choose the wrong
           answer and you will loose 10 seconds. At the end of the time allotted you will get a high
           score.
         </p>
-        <div></div>
+        <div id="timer"></div>
         <!-- <p id="timer"></p> -->
       </div>
         <hr class="my-4" />
@@ -71,6 +71,7 @@
           >
             Let's GO!
           </button>
+          <div id="qu"></div>
         </div>
       </div>
     </div> 
@@ -110,19 +111,25 @@ var currentQuestion = 0
 //currentQuestion++;
 startQuiz.addEventListener("click", function() {
 
-var countDownTimer = ("timer")
-  var timeleft = 60;
+var countDownTimer = ("#timer")
+  var timeleft = 61;
     var countDownTimer = setInterval(function(){
     timeleft--;
-    document.querySelector("timer").textContent = timeleft;
-    if(timeleft <= 0)
+    document.querySelector("#timer").textContent = timeleft;
+    if(timeleft <= 0) {
         clearInterval(countDownTimer);
+        var quizOver = document.getElementById("timer");
+        quizOver.innerHTML = "Game Over!";
+    }
+
     },1000);
-    
+  
+  
+
     // code for putting html on screen for quiz
 })
 
-var optionChosen = document.querySelector(".quizanswer");
+var optionChosen = document.querySelector("#quizanswer");
 optionChosen.addEventListener("click", function() {
 if (allQuestions[currentQuestion].answer === this.textContent) {
   
