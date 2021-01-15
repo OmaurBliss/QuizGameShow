@@ -71,9 +71,6 @@
           >
             Let's GO!
           </button>
-          <div id="qu"></div>
-        </div>
-      </div>
     </div> 
     <div></div>
  <script>
@@ -107,11 +104,14 @@
 ]
 var startQuiz = document.querySelector("#quizclick");
 var quizText = document. getElementById("quiztext");
+var quizstart = document. getElementById("quizstart");
 var currentQuestion = 0;
 var allQuestions;
+var btn = document.createElement("BUTTON");
+var div = document.createElement("div")
+
 
 startQuiz.addEventListener("click", function() {
-
 var countDownTimer = ("#timer")
   var timeleft = 61;
     var countDownTimer = setInterval(function(){
@@ -120,25 +120,30 @@ var countDownTimer = ("#timer")
     if(timeleft <= 0) {
         clearInterval(countDownTimer);
         var quizOver = document.getElementById("timer");
-        quizOver.innerHTML = "Game Over!";
-      
-        
+        quizOver.innerHTML = "Game Over!";   
     }
-
+    
+      
+      
     },1000);
 
-    startQuiz.addEventListener("click", function() {
+    function quizStart() {
+      
+    }
+
       
       // var startQuestion = document.getElementById("quiztext");
       // allQuestions[currentQuestion];
+      // if (timeleft === 61) {
+      //   appendChild(allQuestions)
       // document.querySelector("#quiztext").textContent = allQuestions;
       
-
+    
     });
   
 
     // code for putting html on screen for quiz
-});
+
 
 
 // }
