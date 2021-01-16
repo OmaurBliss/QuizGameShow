@@ -52,22 +52,23 @@
     <div class="container col-md-6">
       <div class="jumbotron text-center">
         <h1 id="timer" class="display-4">MARVEL QUIZ</h1>
-        <p id="quiztext" class="lead">
+        <p id="quiztext" class="lead" >
           Answer each multiple choice correctly within the time allotted to score. Choose the wrong
           answer and you will loose 10 seconds. At the end of the time allotted you will get a high
           score.
         </p>
-        <div id="timer"></div>
+       
         <!-- <p id="timer"></p> -->
       </div>
         <hr class="my-4" />
-        <p id="quizanswer">If you're ready click below to get started. Good Luck!</p>
+        <p id="quizanswer" >If you're ready click below to get started. Good Luck!</p>
         <div class="btn-group-vertical">
-          <button
+          <button 
             id="quizclick"
             type="button"
             class="btn btn-primary btn-lg btn-block"
             margin-bottom="10"
+           
           >
             Let's GO!
           </button>
@@ -105,31 +106,37 @@
 var startQuiz = document.querySelector("#quizclick");
 var quizText = document. getElementById("quiztext");
 var quizstart = document. getElementById("quizstart");
-var currentQuestion = 0;
-var allQuestions;
+var counter = 0;
 var btn = document.createElement("BUTTON");
 var div = document.createElement("div")
 
+ 
+// gameInstructionsPage.style.display = "flex"
+
 
 startQuiz.addEventListener("click", function() {
+
 var countDownTimer = ("#timer")
   var timeleft = 61;
     var countDownTimer = setInterval(function(){
     timeleft--;
     document.querySelector("#timer").textContent = timeleft;
+
     if(timeleft <= 0) {
         clearInterval(countDownTimer);
         var quizOver = document.getElementById("timer");
-        quizOver.innerHTML = "Game Over!";   
+        quizOver.innerHTML = "Game Over!";  
+        return; 
     }
     
       
       
     },1000);
 
-    function quizStart() {
-      
-    }
+  //   function myFunction() {
+  // document.getElementById("panel").style.display = "block";
+       
+  //   }
 
       
       // var startQuestion = document.getElementById("quiztext");
@@ -149,10 +156,24 @@ var countDownTimer = ("#timer")
 // }
 var optionChosen = document.querySelector("#quizclick");
 optionChosen.addEventListener("click", function() {
-  allQuestions
+  var quizQuestion = ("#quiztext" )
+  var currentQuestion = 0
+  var quizQuestion = setInterval(function() {
+    currentQuestion++;
+    document.querySelector("#quiztext" ).textContent = currentQuestion;
+    if (allQuestions[currentQuestion].answer === this.textContent) {
+  
+  currentQuestion++;
+  document.body.appendChild("quiztext")
+    //code for text content for next question
+  }
+    
+  });
+  // allQuestions[currentQuestion].textContent ="";
 if (allQuestions[currentQuestion].answer === this.textContent) {
   
 currentQuestion++;
+document.body.appendChild("quiztext")
   //code for text content for next question
 } else{
   if (timeleft <= 10) {

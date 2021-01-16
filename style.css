@@ -20,9 +20,40 @@ body {
 
 #initials {
     margin-top: 10px;
-
 }
 
+.btn-group .button {
+    background-color: blue; /* Blue */
+    border: 1px solid blue;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer
+  }
+  
+  .btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  .btn-group .button:hover {
+    background-color: blue;
+  }
+
+  #panel {
+    display: none;
+  }
+  #panel, .flip {
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    border: solid 1px #a6d8a8;
+    margin: auto;
+  }
 .footer {
     position: fixed;
     left: 0;
