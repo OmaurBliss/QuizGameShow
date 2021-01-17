@@ -57,41 +57,7 @@
           answer and you will loose 10 seconds. At the end of the time allotted you will get a high
           score.
         </p>
-        <div id='question1'>
-          <p>Who is Tony Stark's alter ego?</p>
-          <p>Pink Panther</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button1'>Submit</button>
-         </div>
-         <div id='question2'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button2'>Submit</button>
-         </div>
-         <div id='question3'>
-          <p>What is 2+2?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button3'>Submit</button>
-         </div>
-         <div id='question4'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button4'>Submit</button>
-         </div>
-         <div id='question5'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button5'>Submit</button>
-         </div>
+       
         <!-- <p id="timer"></p> -->
       </div>
         <hr class="my-4" />
@@ -110,51 +76,6 @@
     <div></div>
  <script>
   //  Timer
-  // setup all the question "containers" and buttons
-  var button1 = document.querySelector('#button1');
-         var button2 = document.querySelector('#button2');
-         var button3 = document.querySelector('#button3');
-         var button4 = document.querySelector('#button4');
-         var button5 = document.querySelector('#button5');
-         var question1 = document.querySelector('#question1');
-         var question2 = document.querySelector('#question2');
-         var question3 = document.querySelector('#question3');
-         var question4 = document.querySelector('#question4');
-         var question5 = document.querySelector('#question5')
-         // ...
-        //  in the code we can start with these hidden or shown
-         question1.setAttribute("style", "display:block");
-         question2.setAttribute("style", "display:none");
-         //... 
-         // When button 1 clicks the question 1 should disappear and 2 should appear
-         button1.addEventListener("click", function(){ 
-         
-             //hide question 1
-             question1.setAttribute("style", "display:none");
-             //show question 2
-             question2.setAttribute("style", "display:block");
-          });
-         // When button 2 clicks the question 2 should disappear and 3 should appear
-         button2.addEventListener("click", function(){ 
-             //hide question 2
-             question2.setAttribute("style", "display:none");
-             //show question 3
-             question3.setAttribute("style", "display:block");
-          });
-          button3.addEventListener("click", function(){ 
-             //hide question 3
-             question3.setAttribute("style", "display:none");
-             //show question 4
-             question4.setAttribute("style", "display:block");
-          });
-         // When button 2 clicks the question 2 should disappear and 3 should appear
-         button4.addEventListener("click", function(){ 
-             //hide question 4
-             question4.setAttribute("style", "display:none");
-             //show question 5
-             question5.setAttribute("style", "display:block");
-          });
-          
   var allQuestions = [
     {
         question: "Who is Tony Stark's alter ego?",
@@ -186,13 +107,15 @@ var startQuiz = document.querySelector("#quizclick");
 var quizText = document. getElementById("quiztext");
 var quizstart = document. getElementById("quizstart");
 var counter = 0;
+var btn = document.createElement("BUTTON");
+var div = document.createElement("div")
+
+ 
+// gameInstructionsPage.style.display = "flex"
 
 
 startQuiz.addEventListener("click", function() {
- 
-         quizText.setAttribute("style", "display:none");
-         button1.setAttribute("style", "display:block")
-         question1.setAttribute("style", "display:block");
+
 var countDownTimer = ("#timer")
   var timeleft = 61;
     var countDownTimer = setInterval(function(){
@@ -209,8 +132,6 @@ var countDownTimer = ("#timer")
       
       
     },1000);
-
-    
 
   //   function myFunction() {
   // document.getElementById("panel").style.display = "block";
@@ -248,22 +169,22 @@ var countDownTimer = ("#timer")
     
   // });
   // allQuestions[currentQuestion].textContent ="";
-// if (allQuestions[currentQuestion].answer === this.textContent) {
+if (allQuestions[currentQuestion].answer === this.textContent) {
   
-// currentQuestion++;
-// document.body.appendChild("quiztext")
+currentQuestion++;
+document.body.appendChild("quiztext")
   //code for text content for next question
-// } else{
-//   if (timeleft <= 10) {
-//     clearInterval(countDownTimer);
+} else{
+  if (timeleft <= 10) {
+    clearInterval(countDownTimer);
     //end game code here
-//   } else {
-//   timeleft -= 10; }
+  } else {
+  timeleft -= 10; }
   
-// }
-// currentQuestion++;
+}
+currentQuestion++;
 
-// });
+});
  </script>
   <footer>
     <a class="footer" href="index.html">
