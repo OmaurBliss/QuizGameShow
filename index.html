@@ -57,43 +57,6 @@
           answer and you will loose 10 seconds. At the end of the time allotted you will get a high
           score.
         </p>
-        <div id='question1'>
-          <p>Who is Tony Stark's alter ego?</p>
-          <p>Pink Panther</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button1'>Submit</button>
-         </div>
-         <div id='question2'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button2'>Submit</button>
-         </div>
-         <div id='question3'>
-          <p>What is 2+2?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button3'>Submit</button>
-         </div>
-         <div id='question4'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button4'>Submit</button>
-         </div>
-         <div id='question5'>
-          <p>What is 4+4?</p>
-          <p>answer</p>
-          <p>answer</p>
-          <p>answer</p>
-          <button id='button5'>Submit</button>
-         </div>
-        <!-- <p id="timer"></p> -->
-      </div>
         <hr class="my-4" />
         <p id="quizanswer" >If you're ready click below to get started. Good Luck!</p>
         <div class="btn-group-vertical">
@@ -106,7 +69,45 @@
           >
             Let's GO!
           </button>
-    </div> 
+    </div>
+        <div id='question1'>
+          <p>Who is Tony Stark's alter ego?</p>
+          <button id='button1' class="btn"><p>Pink Panther</p></button>
+          <button id='button1' class="btn"><p>Black Panther</p></button>
+          <button id='button1' class="btn"><p>Ironman</p></button>
+          <!-- <button id='button1'>Submit</button> -->
+         </div>
+         <div id='question2'>
+          <p>Who is an origional member of the Avengers?</p>
+          <button id='button2' class="btn"><p>Aquaman</p></button>
+          <button id='button2' class="btn"><p>Black Panther</p></button>
+          <button id='button2' class="btn"><p>Black Widow</p></button>
+          <!-- <button id='button2'>Submit</button> -->
+         </div>
+         <div id='question3'>
+          <p>which super hero was bitten by a radioactive spider?</p>
+          <button id='button3' class="btn"><p>Quicksilver</p></button>
+          <button id='button3' class="btn"><p>Spiderman</p></button>
+          <button id='button3' class="btn"><p>Batman</p></button>
+          <!-- <button id='button3'>Submit</button> -->
+         </div>
+         <div id='question4'>
+          <p>Which super villain was in search of the infinity stones?</p>
+          <button id='button4' class="btn"><p>Thanos</p></button>
+          <button id='button4' class="btn"><p>Galactis</p></button>
+          <button id='button4' class="btn"><p>Silver Surfer</p></button>
+          <!-- <button id='button4'>Submit</button> -->
+         </div> 
+         <div id='question5'>
+          <p>Which marvel character is known to break the forth wall?</p>
+          <button id='button5' class="btn"><p>Deathstroke</p></button>
+          <button id='button5' class="btn"><p>Deadpool</p></button>
+          <button id='button5' class="btn"><p>Daredevil</p></button>
+          <!-- <button id='button5'>Submit</button> -->
+         </div>
+        <!-- <p id="timer"></p> -->
+      </div>
+        
     <div></div>
  <script>
   //  Timer
@@ -125,14 +126,15 @@
         //  in the code we can start with these hidden or shown
          question1.setAttribute("style", "display:block");
          question2.setAttribute("style", "display:none");
+         
          //... 
          // When button 1 clicks the question 1 should disappear and 2 should appear
          button1.addEventListener("click", function(){ 
          
              //hide question 1
              question1.setAttribute("style", "display:none");
-             //show question 2
-             question2.setAttribute("style", "display:block");
+            //  //show question 2
+             question2.setAttribute("style", "display:none");
           });
          // When button 2 clicks the question 2 should disappear and 3 should appear
          button2.addEventListener("click", function(){ 
@@ -155,44 +157,18 @@
              question5.setAttribute("style", "display:block");
           });
           
-  var allQuestions = [
-    {
-        question: "Who is Tony Stark's alter ego?",
-        choices:["Pink Panther", "The Claw", "Ironman", "Black Panther"],
-        answer: "Ironman"
-    },
-    {
-        question: "Who is an origional member of the Avengers?",
-        choices: ["Rocket", "Black Panther", "Aquaman", "Black Widow"],
-        answer: "Black Widow"
-    },
-    {
-        question: "Which superhero was bitten by a radioactive spider?",
-        choices: ["Hulk", "Thor", "Hawkeye", "Spiderman"],
-        answer: "Spiderman"
-    },
-    {
-        question: "Which super villain was in search of the infinity stones?",
-        choices: ["Dr Doom", "Octopus", "The Mandarin", "Thanos"],
-        answer: "Thanos"
-    },
-    {
-        question: "Which marvel character is known to break the forth wall?",
-        choices: ["Dare Devil", "Iron Fist", "Punisher", "Deadpool"],
-        answer: "Deadpool"
-    }
-]
+  var allQuestionAnsweres = ["Ironman", "Black Widow", "Thanos", "Deadpool"]
 var startQuiz = document.querySelector("#quizclick");
 var quizText = document. getElementById("quiztext");
 var quizstart = document. getElementById("quizstart");
 var counter = 0;
 
 
+
 startQuiz.addEventListener("click", function() {
  
          quizText.setAttribute("style", "display:none");
-         button1.setAttribute("style", "display:block")
-         question1.setAttribute("style", "display:block");
+      
 var countDownTimer = ("#timer")
   var timeleft = 61;
     var countDownTimer = setInterval(function(){
